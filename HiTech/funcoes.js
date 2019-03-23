@@ -1,7 +1,7 @@
 const form = document.querySelector('form');
 const ul = document.querySelector('ul');
-const button = document.querySelector('button');
-const input =  document.getElementById('nomeEmpresa');
+const button = document.getElementById('limpar');
+const input = document.getElementById('item');
 let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
 localStorage.setItem('items', JSON.stringify(itemsArray));
@@ -33,17 +33,3 @@ button.addEventListener('click', function () {
   }
   itemsArray = [];
 });
-
-var placesAutocomplete = places({
-    appId: 'pl6B7D0HC9AF',
-    apiKey: 'f521449efbce3e112fa05484425ef144',
-    container: document.querySelector('#address-input')
-  });
-
-  var app = new Vue({
-    el: '#app',
-    data: {
-      titulo: 'HiTech - Test',
-      mensagem: ''
-    }
-  })
