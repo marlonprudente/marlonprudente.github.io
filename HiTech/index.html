@@ -6,6 +6,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 
 
@@ -17,24 +18,31 @@
 
 <body>
 
-  <div class="small-container col-md-12">
+  <div class="col-md-12">
     <div class="form-group col-md-5">
-    <h1>New Tab App</h1>
+      <h1>New Tab App</h1>
 
-    <form>
-      <input id="item" type="text" class="form-control" placeholder="Nome do Estabelecimento">
-      <input type="search" id="address-input" placeholder="Endereço do Estabelecimento" />
-      <button id="button" type="submit">Enviar</button>
-    </form>
-  </div>
-  <div class="col-md-5">
-    <h2>Items</h2>
-    <ul></ul>
+      <form>
+        <input id="item" type="text" class="form-control" placeholder="Nome do Estabelecimento">
+        <input type="search" id="address-input" placeholder="Endereço do Estabelecimento" />
+        <button id="button" type="submit">Enviar</button>
+      </form>
+    </div>
+    <div class="col-md-5">
+      <h2>Items</h2>
+      <div class="w3-card-4" style="width:50%;">
+        <header class="w3-container w3-blue">
+          <h1>Header</h1>
+        </header>
+        <div class="w3-container">
+          <ul></ul>
+        </div>
 
-    <button id="limpar">Clear All</button>
+      </div>
+      <button id="limpar">Clear All</button>
+    </div>
   </div>
-  </div>
-    <!-- Scripts -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.1"></script>
   <script>
     var placesAutocomplete = places({

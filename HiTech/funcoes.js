@@ -16,10 +16,9 @@ const liMaker = (text) => {
 
 form.addEventListener('submit', function (e) {
   e.preventDefault();
-
-  itemsArray.push(input.value + " - " +localizacao.value);
+  itemsArray.push(JSON.stringify({nome: input.value, endereco: localizacao.value}));
   localStorage.setItem('items', JSON.stringify(itemsArray));
-  liMaker(input.value + " - " +localizacao.value);
+  liMaker(JSON.stringify({nome: input.value, endereco: localizacao.value}));
   input.value = "";
   localizacao.value = "";
 });
