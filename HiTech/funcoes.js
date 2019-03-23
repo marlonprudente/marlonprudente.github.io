@@ -2,6 +2,7 @@ const form = document.querySelector('form');
 const ul = document.querySelector('ul');
 const button = document.getElementById('limpar');
 const input = document.getElementById('item');
+const localizacao = document.getElementById('address-input');
 let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
 localStorage.setItem('items', JSON.stringify(itemsArray));
@@ -16,10 +17,11 @@ const liMaker = (text) => {
 form.addEventListener('submit', function (e) {
   e.preventDefault();
 
-  itemsArray.push(input.value);
+  itemsArray.push(input.value + " - " +localizacao.value);
   localStorage.setItem('items', JSON.stringify(itemsArray));
-  liMaker(input.value);
+  liMaker(input.value + " - " +localizacao.value);
   input.value = "";
+  localizacao.value = "";
 });
 
 data.forEach(item => {

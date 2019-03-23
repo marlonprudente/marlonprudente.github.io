@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Places</title>
 </head>
-<body>
-    <input type="search" id="address-input" placeholder="Where are we going?" />
 
-<script src="https://cdn.jsdelivr.net/npm/places.js@1.16.1"></script>
-<script>
-  var placesAutocomplete = places({
-    appId: 'pl6B7D0HC9AF',
-    apiKey: 'bc66c4830b8c47e8a2a82064a55105d3',
-    container: document.querySelector('#address-input')
-  });
-</script>
+<body>
+    <input type="search" id="address-input" placeholder="Endereço do Estabelecimento" />
+
+    <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.1"></script>
+    <script>
+        var placesAutocomplete = places({
+            appId: 'pl6B7D0HC9AF',
+            apiKey: 'bc66c4830b8c47e8a2a82064a55105d3',
+            container: document.querySelector('#address-input')
+        });
+    </script>
 </body>
+
 </html>
