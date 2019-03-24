@@ -22,11 +22,13 @@
 </head>
 
 <body>
+    
     <div id="app">
         <div id="root" class="row">
-
+               
             <div class="col-md-6">
                 <div class="container">
+                        <h2>Hi Tech - Teste Front-End</h2>
                     <add-item></add-item>
                 </div>
             </div>
@@ -48,6 +50,7 @@
                 placeholder="Digite o endereço" />
 
             <button @click.stop.prevent="submit()" class="btn btn-success btn-block">Enviar</button>
+            <button @click.stop.prevent="clear()" class="btn btn-primary btn-block">Limpar</button>
         </div>
 
 
@@ -68,7 +71,7 @@
     </template>
 
 
-    <!-- <button @click.stop.prevent="clear()" class="btn btn-primary btn-block">Limpar</button> -->
+    
 
 
     <!-- Vue v2.5.21 -->
@@ -102,7 +105,6 @@
             data() {
                 if (localStorage.getItem('listItens')) {
                     try {
-                        console.log("Entrei aqui");
                         listItens = JSON.parse(localStorage.getItem('listItens'));
                         return { listItens: listItens }
                     } catch (error) {
@@ -124,6 +126,12 @@
                     });
                     const parsed = JSON.stringify(app.listItens);
                     localStorage.setItem('listItens', parsed);
+                });
+
+                this.$eventHub.$on('clear', function(item){
+                    app.listItens.splice();                    
+                    localStorage.removeItem('listItens');
+                    location.reload();
                 });
             }
         });
