@@ -6,6 +6,7 @@
     <!-- Live.js -->
     <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.1"></script>
     <script src="js/live.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,7 +40,7 @@
             </div>
         </div>
     </div>
-
+    <div id="chart_div"></div>
     <template id="add-item">
 
         <div class="form-group">
@@ -150,6 +151,45 @@
             container: document.getElementById('address-input')
         });
     </script>
+
+<script type="text/javascript">
+google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawMultSeries);
+
+function drawMultSeries() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Estados');
+      data.addColumn('number', 'Quantidade');
+
+      data.addRows([
+        [{v: "MG", f: 'Minas Gerais'}, 3],
+        [{v: "SP", f: 'São Paulo'}, 5],
+        [{v: "PR", f: 'Paraná'}, 4],
+        [{v: "SC", f: 'Santa Catarina'}, 1],
+      ]);
+
+      var options = {
+        title: 'Quantidade de Empresas por Estado',
+        hAxis: {
+          title: 'Empresas por Estado',
+          format: 'h:mm a',
+          viewWindow: {
+            min: [7, 30, 0],
+            max: [17, 30, 0]
+          }
+        },
+        vAxis: {
+          title: 'Quantidade de Empresas'
+        }
+      };
+
+      var chart = new google.visualization.ColumnChart(
+        document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+  </script>
+
 </body>
 
 </html>
