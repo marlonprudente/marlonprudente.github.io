@@ -36,9 +36,9 @@
 
 					// Images (in the format of 'url': 'alignment').
 						images: {
-							'https://marlonprudente.github.io/images/bg01.jpg': 'center',
-							'https://marlonprudente.github.io/images/bg02.jpg': 'center',
-							'https://marlonprudente.github.io/images/bg03.jpg': 'center'
+							'images/bg01.jpg': 'center',
+							'images/bg02.jpg': 'center',
+							'images/bg03.jpg': 'center'
 						},
 
 					// Delay.
