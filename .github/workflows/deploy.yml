@@ -18,9 +18,6 @@ jobs:
 
       - name: Setup Node
         uses: actions/setup-node@v3
-        
-      - run: git config --global url."https://${{ secrets.PAT }}@github.com/".insteadOf ssh://git@github.com/
-      - run: npm ci
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
